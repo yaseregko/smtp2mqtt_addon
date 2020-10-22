@@ -1,16 +1,16 @@
-ARG BUILD_FROM=hassioaddons/base:8.0.3
+ARG BUILD_FROM=hassioaddons/base-aarch64:8.0.4
 FROM ${BUILD_FROM}
+
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 WORKDIR /app
 
-ENV PYTHONUNBUFFERED=1
-RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
-RUN python3 -m ensurepip
-RUN pip3 install --no-cache --upgrade pip setuptools
+RUN apk add --update --no-cache jq nodejs npm git && \
+    npm install --unsafe-perm -g pm2 fs mqtt mailparser smtp-server && \
+    npm install --unsafe-perm && \
+RUN git clone --depth=1 https://github.com/yaseregko/smtp2mqtt.git /app
 
-RUN git clone https://github.com/gonzalezcalleja/smtp2mqtt.git
-
-COPY smtp2mqtt/smtp2mqtt.py /app
+COPY rootfs /
 
 # Build arguments
 ARG BUILD_ARCH
@@ -37,12 +37,3 @@ LABEL \
     org.opencontainers.image.created=${BUILD_DATE} \
     org.opencontainers.image.revision=${BUILD_REF} \
     org.opencontainers.image.version=${BUILD_VERSION}
-
-EXPOSE 1125
-
-RUN python /app/smtp2mqtt.py \
-          --mqtttopic "doorbell/entrada" \
-          --mqtthost 127.0.0.1 --mqttport 1883 \
-          --mqttusername mqtt --mqttpassword mosquitto \
-          --smtphost 127.0.0.1 --smtpport 1125 \
-          --smtpusername doorbell@domain.local --smtppassword secret

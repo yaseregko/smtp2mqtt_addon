@@ -1,1 +1,1 @@
-smtp2mqtt
+smtp2mqtt_addon

@@ -1,5 +1,5 @@
 {
     "name": "smtp2mqtt addon Home Assistant",
-    "url": "https://github.com/yaseregko/smtp2mqtt",
+    "url": "https://github.com/yaseregko/smtp2mqtt_addon",
     "maintainer": "Sergey Rubtsov <ya.seregko@gmail.com>"
 }

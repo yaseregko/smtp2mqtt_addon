@@ -1,0 +1,15 @@
+
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Home Assistant Community Add-on: smtp2mqtt for video doorbell
+# Runs the smtp2mqtt
+# ==============================================================================
+
+bashio::log.info "Starting smtp2mqtt..."
+
+export DISABLE_IPV6="true"
+
+cd /app \
+    || bashio::exit.nok "Could not change directory to app"
+
+exec node /app/smtp2mqtt.js
