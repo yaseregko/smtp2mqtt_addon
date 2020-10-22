@@ -1,5 +1,4 @@
-
-#!/usr/bin/with-contenv bashio
+#!/usr/bin/env bashio
 # ==============================================================================
 # Home Assistant Community Add-on: smtp2mqtt for video doorbell
 # Runs the smtp2mqtt

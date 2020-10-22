@@ -1,6 +1,8 @@
 ARG BUILD_FROM=hassioaddons/base-aarch64:8.0.4
 FROM ${BUILD_FROM}
 
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 WORKDIR /app
 
 RUN apk add --update --no-cache jq nodejs npm git
