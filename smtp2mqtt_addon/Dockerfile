@@ -6,7 +6,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 WORKDIR /app
 
 RUN apk add --update --no-cache jq nodejs npm git
-RUN npm install --unsafe-perm -g fs mqtt mailparser smtp-server
+RUN npm install fs mqtt mailparser smtp-server
 RUN git clone --depth=1 https://github.com/yaseregko/smtp2mqtt.git /app
 
 COPY rootfs /
