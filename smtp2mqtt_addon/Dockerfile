@@ -3,9 +3,10 @@ FROM ${BUILD_FROM}
 
 WORKDIR /app
 
-RUN apk add --update --no-cache jq nodejs npm git && \
+RUN apk add --update --no-cache jq nodejs npm git
+
+RUN git clone --depth=1 https://github.com/yaseregko/smtp2mqtt.git /app && \
     npm install fs mqtt mailparser smtp-server
-RUN git clone --depth=1 https://github.com/yaseregko/smtp2mqtt.git /app
 
 COPY rootfs /
 
