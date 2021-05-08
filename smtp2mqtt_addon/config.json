@@ -1,6 +1,6 @@
 {
   "name": "smtp2mqtt",
-  "version": "dev",
+  "version": "0.1",
   "slug": "smtp2mqtt",
   "description": "smtp2mqtt add-on for video doorbell",
   "url": "https://github.com/yaseregko/smtp2mqtt_addon",
