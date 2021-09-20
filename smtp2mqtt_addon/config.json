@@ -1,6 +1,6 @@
 {
   "name": "smtp2mqtt",
-  "version": "0.1",
+  "version": "0.2",
   "slug": "smtp2mqtt",
   "description": "smtp2mqtt add-on for video doorbell",
   "url": "https://github.com/yaseregko/smtp2mqtt_addon",
@@ -20,12 +20,14 @@
     "25/tcp": "smtp tcp-listen port"
   },
   "options": {
+    "deviceId": "0",
     "media_path": "/media",
     "mqtt_url": "mqtt://core-mosquitto:1883",
     "mqtt_username": "username",
     "mqtt_password": "password"
   },
   "schema": {
+    "deviceId": "str?",
     "media_path": "str?",
     "mqtt_url": "str?",
     "mqtt_username": "str?",
