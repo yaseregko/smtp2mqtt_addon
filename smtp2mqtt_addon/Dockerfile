@@ -20,14 +20,14 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
-    io.hass.name="smtp2mqtt addon" \
-    io.hass.description="smtp2mqtt add-on by Home Assistant Community Add-ons" \
+    io.hass.name="Doorbell Yoosee SD-05" \
+    io.hass.description="This addon simulate an SMTP server (required by Yoosee/KONX doorbell) and public a message in MQTT everytime the doorbell rings." \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Sergey Rubtsov <ya.seregko@gmail.com>" \
-    org.opencontainers.image.title="smtp2mqtt addon" \
-    org.opencontainers.image.description="smtp2mqtt add-on by Home Assistant Community Add-ons" \
+    org.opencontainers.image.title="smtp2mqtt addon for doorbell" \
+    org.opencontainers.image.description="This addon simulate an SMTP server (required by Yoosee/KONX doorbell) and public a message in MQTT everytime the doorbell rings." \
     org.opencontainers.image.vendor="Home Assistant Community Add-ons" \
     org.opencontainers.image.authors="Sergey Rubtsov <ya.seregko@gmail.com>" \
     org.opencontainers.image.licenses="MIT" \
