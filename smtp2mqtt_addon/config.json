@@ -1,8 +1,8 @@
 {
   "name": "smtp2mqtt",
-  "version": "0.2",
+  "version": "0.3",
   "slug": "smtp2mqtt",
-  "description": "smtp2mqtt add-on for video doorbell",
+  "description": "This addon simulate an SMTP server (required by Yoosee/KONX doorbell) and public a message in MQTT everytime the doorbell rings.",
   "url": "https://github.com/yaseregko/smtp2mqtt_addon",
   "startup": "application",
   "init": false,
@@ -20,14 +20,14 @@
     "25/tcp": "smtp tcp-listen port"
   },
   "options": {
-    "deviceId": "0",
+    "device_id": "0",
     "media_path": "/media",
     "mqtt_url": "mqtt://core-mosquitto:1883",
     "mqtt_username": "username",
     "mqtt_password": "password"
   },
   "schema": {
-    "deviceId": "str?",
+    "device_id": "str?",
     "media_path": "str?",
     "mqtt_url": "str?",
     "mqtt_username": "str?",
