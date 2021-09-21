@@ -1,6 +1,6 @@
 {
   "name": "smtp2mqtt",
-  "version": "0.3",
+  "version": "0.3.1",
   "slug": "smtp2mqtt",
   "description": "This addon simulate an SMTP server (required by Yoosee/KONX doorbell) and public a message in MQTT everytime the doorbell rings.",
   "url": "https://github.com/yaseregko/smtp2mqtt_addon",
